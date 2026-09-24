@@ -120,7 +120,6 @@ main { position: relative; z-index: 2; }
 .movie__sound { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); border: 0; border-radius: 999px; padding: 8px 16px; font: 700 13px/1 var(--maru);
   background: rgba(251,248,240,.94); color: var(--ink); box-shadow: 0 4px 10px rgba(0,0,0,.2); cursor: pointer; }
 .movie__sound[aria-pressed="true"] { background: var(--gold-l); }
-.movie figcaption { font-size: 12.5px; color: var(--muted); text-align: center; }
 
 /* ---- クイズ ---- */
 .quiz { max-width: 520px; justify-self: end; --tilt: -1.4deg; }
