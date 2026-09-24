@@ -38,7 +38,7 @@
 
 <main>
   <!-- ① 登山口 -->
-  <section class="sec hero" data-cam="0" data-alt="800">
+  <section class="sec hero" id="top" data-cam="0" data-alt="800">
     <p class="eyebrow">山道具ラボ ｜ 山の名人シリーズ</p>
     <h1 class="title" aria-label="山の名人">
       <span class="cut" style="--i:0">山</span><span class="cut" style="--i:1">の</span><span class="cut" style="--i:2">名</span><span class="cut" style="--i:3">人</span>
@@ -112,7 +112,7 @@
         <img src="img/shot-tori-2.webp" alt="そっくりな鳥の見分け画面" loading="lazy" width="560" height="1211">
         <img src="img/shot-tori-3.webp" alt="山の鳥図鑑の画面" loading="lazy" width="560" height="1211">
       </div>
-      <a class="store" data-app="tori" href="#">App Storeで見る<small>無料でダウンロード</small></a>
+      <a class="store" data-app="tori" data-placement="tori_section" href="https://apps.apple.com/app/apple-store/id6795488069?pt=1080680&amp;ct=seriessite_tori_section&amp;mt=8" target="_blank" rel="noopener">App Storeで見る<small>無料でダウンロード</small></a>
     </div>
   </section>
 
@@ -180,7 +180,7 @@
         <img src="img/shot-hana-2.webp" alt="まちがえた時の見分け解説画面" loading="lazy" width="560" height="1211">
         <img src="img/shot-hana-3.webp" alt="山の花図鑑の画面" loading="lazy" width="560" height="1211">
       </div>
-      <a class="store" data-app="hana" href="#">App Storeで見る<small>無料でダウンロード</small></a>
+      <a class="store" data-app="hana" data-placement="hana_section" href="https://apps.apple.com/app/apple-store/id6789052002?pt=1080680&amp;ct=seriessite_hana_section&amp;mt=8" target="_blank" rel="noopener">App Storeで見る<small>無料でダウンロード</small></a>
     </div>
   </section>
 
@@ -232,7 +232,7 @@
         <img src="img/shot-kumo-2.webp" alt="観天望気の解説画面" loading="lazy" width="560" height="1211">
         <img src="img/shot-kumo-3.webp" alt="笠雲とレンズ雲の見分け画面" loading="lazy" width="560" height="1211">
       </div>
-      <a class="store" data-app="kumo" href="#">App Storeで見る<small>無料でダウンロード</small></a>
+      <a class="store" data-app="kumo" data-placement="kumo_section" href="https://apps.apple.com/app/apple-store/id6793737365?pt=1080680&amp;ct=seriessite_kumo_section&amp;mt=8" target="_blank" rel="noopener">App Storeで見る<small>無料でダウンロード</small></a>
     </div>
   </section>
 
@@ -244,24 +244,24 @@
       <div class="result" id="result">
         <p class="result__score"><span id="score">0</span><small>/ 3問</small></p>
         <p class="result__rank" id="rank">途中の3問、まだ間に合います。</p>
-        <a class="result__share" id="share" href="#" target="_blank" rel="noopener">Threadsで結果をシェア</a>
+        <a class="result__share" id="share" data-placement="summit_share_threads" href="#" target="_blank" rel="noopener">Threadsで結果をシェア</a>
       </div>
       <p class="summit__lead">続きは、アプリで。<br>3本そろえて、山の名人に。</p>
       <ul class="lineup">
         <li class="lineup__item lineup__item--hana">
           <img src="img/icon-hana.webp" alt="" width="84" height="84">
           <h3>山の花名人</h3><p>高山植物 132種</p>
-          <a class="store store--sm" data-app="hana" href="#">App Storeで見る</a>
+          <a class="store store--sm" data-app="hana" data-placement="summit_hana" href="https://apps.apple.com/app/apple-store/id6789052002?pt=1080680&amp;ct=seriessite_summit_hana&amp;mt=8" target="_blank" rel="noopener">App Storeで見る</a>
         </li>
         <li class="lineup__item lineup__item--tori">
           <img src="img/icon-tori.webp" alt="" width="84" height="84">
           <h3>山の鳥名人</h3><p>山の野鳥 97種</p>
-          <a class="store store--sm" data-app="tori" href="#">App Storeで見る</a>
+          <a class="store store--sm" data-app="tori" data-placement="summit_tori" href="https://apps.apple.com/app/apple-store/id6795488069?pt=1080680&amp;ct=seriessite_summit_tori&amp;mt=8" target="_blank" rel="noopener">App Storeで見る</a>
         </li>
         <li class="lineup__item lineup__item--kumo">
           <img src="img/icon-kumo.webp" alt="" width="84" height="84">
           <h3>山の雲名人</h3><p>雲と空 34種</p>
-          <a class="store store--sm" data-app="kumo" href="#">App Storeで見る</a>
+          <a class="store store--sm" data-app="kumo" data-placement="summit_kumo" href="https://apps.apple.com/app/apple-store/id6793737365?pt=1080680&amp;ct=seriessite_summit_kumo&amp;mt=8" target="_blank" rel="noopener">App Storeで見る</a>
         </li>
       </ul>
       <ul class="common">
@@ -272,8 +272,9 @@
       </ul>
     </div>
     <footer class="foot">
-      <p><a href="https://www.daringdaddy.com/" rel="noopener">山道具ラボ</a> がつくっています。</p>
+      <p><a href="https://www.daringdaddy.com/apps?from=seriessite_footer_labo" data-placement="footer_labo" target="_blank" rel="noopener">山道具ラボ</a> がつくっています。</p>
       <p class="foot__small">アプリ画面内の写真は、各撮影者の Creative Commons ライセンス画像です（撮影者とライセンスは各画像の下部に記載）。App Store は Apple Inc. のサービスマークです。</p>
+      <p class="foot__small">このページは、どこまで読まれたか・どのボタンが押されたかを知るために Google アナリティクスと Amplitude を使っています。端末ごとのランダムなID（Cookie 等）を保存しますが、氏名などは受け取らず、広告目的の追跡もしません。Google アナリティクスは <a href="https://tools.google.com/dlpage/gaoptout?hl=ja" data-placement="footer_ga_optout" target="_blank" rel="noopener">オプトアウト</a> できます。</p>
       <p class="foot__small">© 2026 山道具ラボ</p>
     </footer>
   </section>

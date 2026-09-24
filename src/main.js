@@ -1,5 +1,6 @@
 import './style.css';
 import { createScene } from './scene.js';
+import { checkLinks, trackSection, trackQuiz, trackSound, setState } from './analytics.js';
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -15,13 +16,8 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelector('.grain').style.backgroundImage = url;
 }
 
-// ---- App Store へのリンク（ct= で「どこから押されたか」を App Store Connect で見分ける） ----
-const IDS = { hana: '6789052002', tori: '6795488069', kumo: '6793737365' };
-document.querySelectorAll('a.store').forEach(a => {
-  const where = a.closest('section')?.id || 'top';
-  a.href = `https://apps.apple.com/app/apple-store/id${IDS[a.dataset.app]}?pt=1080680&ct=seriessite_${where}&mt=8`;
-  a.target = '_blank'; a.rel = 'noopener';
-});
+// ---- 計測（外に出るリンクには、押された場所をURLにも書き込む） ----
+checkLinks();
 
 // ---- 3D ----
 let scene = null;
@@ -45,6 +41,7 @@ function onScroll() {
   }
   f = Math.max(0, Math.min(secs.length - 1, f));
   scene?.setProgress(f);
+  trackSection(secs[Math.round(f)].id);
   const i = Math.min(secs.length - 2, Math.floor(f)), t = f - i;
   const alt = +secs[i].dataset.alt + (+secs[i + 1].dataset.alt - +secs[i].dataset.alt) * t;
   altEl.textContent = Math.round(alt / 10) * 10 >= 1000 ? (Math.round(alt / 10) * 10).toLocaleString('ja-JP') : Math.round(alt / 10) * 10;
@@ -75,6 +72,7 @@ soundBtn.addEventListener('click', () => {
   video.muted = !on;
   if (on) { video.currentTime = 0; video.play().catch(() => {}); }
   soundBtn.setAttribute('aria-pressed', String(on));
+  trackSound(on);
   soundBtn.textContent = on ? '♪ 音を消す' : '♪ 音を出す';
 });
 
@@ -99,6 +97,7 @@ quizzes.forEach(q => {
     answers[id] = i === +q.dataset.answer;
     answers[id + '_pick'] = i;
     try { localStorage.setItem(KEY, JSON.stringify(answers)); } catch {}
+    trackQuiz(id, i === +q.dataset.answer);
     showAnswer(q, i); updateResult();
   }));
   if (id + '_pick' in answers) showAnswer(q, answers[id + '_pick']);
@@ -108,6 +107,7 @@ function updateResult() {
   const done = quizzes.filter(q => q.dataset.quiz in answers).length;
   const score = quizzes.filter(q => answers[q.dataset.quiz] === true).length;
   document.getElementById('score').textContent = score;
+  setState({ quiz_done: done, quiz_score: score });
   const rank = document.getElementById('rank');
   if (done < 3) rank.textContent = done === 0 ? '途中の3問、まだ間に合います。' : `あと${3 - done}問。少し戻って挑戦できます。`;
   else rank.textContent = ['見習い。伸びしろしかありません。', '見習い。ここからが面白いところ。', '初段の腕前。あと一歩で名人。', '全問正解。名人の素質あり！'][score];

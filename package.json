@@ -7,6 +7,11 @@
     "build": "vite build",
     "preview": "vite preview --port 4173"
   },
-  "dependencies": { "three": "^0.180.0" },
-  "devDependencies": { "vite": "^7.1.0" }
+  "dependencies": {
+    "@amplitude/analytics-browser": "^2.47.0",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  }
 }
