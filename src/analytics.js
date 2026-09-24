@@ -21,8 +21,9 @@ function entrySource() {
   try { const saved = sessionStorage.getItem(KEY); if (saved) return JSON.parse(saved); } catch {}
   let ref = '';
   try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch {}
+  if (ref === location.hostname) ref = ''; // 再読み込み・サイト内移動は流入元にしない
   const src = {
-    entry_from: params.get('from') || params.get('utm_source') || (ref && ref !== location.hostname ? ref : '(direct)'),
+    entry_from: params.get('from') || params.get('utm_source') || (ref || '(direct)'),
     entry_campaign: params.get('utm_campaign') || '',
     entry_referrer: ref || '(none)',
   };
