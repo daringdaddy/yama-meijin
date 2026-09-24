@@ -60,20 +60,24 @@ if (matchMedia('(pointer: fine)').matches) {
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .18 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// ---- 動画：見えている間だけ再生。音は押したときだけ ----
-const video = document.getElementById('promo');
-const soundBtn = document.getElementById('soundBtn');
-new IntersectionObserver(([e]) => {
-  if (e.isIntersecting) { video.preload = 'auto'; video.play().catch(() => {}); }
-  else video.pause();
-}, { threshold: .4 }).observe(video);
-soundBtn.addEventListener('click', () => {
-  const on = video.muted;
-  video.muted = !on;
-  if (on) { video.currentTime = 0; video.play().catch(() => {}); }
-  soundBtn.setAttribute('aria-pressed', String(on));
-  trackSound(on);
-  soundBtn.textContent = on ? '♪ 音を消す' : '♪ 音を出す';
+// ---- 動画（花・鳥・雲）：見えている間だけ再生。音は押したときだけ ----
+document.querySelectorAll('.movie').forEach(fig => {
+  const video = fig.querySelector('video');
+  const btn = fig.querySelector('.movie__sound');
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { video.preload = 'auto'; video.play().catch(() => {}); }
+    else if (!video.paused) video.pause();
+  }, { threshold: .4 }).observe(video);
+  btn.addEventListener('click', () => {
+    const on = video.muted;
+    // 音は1本だけ：ほかの動画はミュートに戻す
+    if (on) document.querySelectorAll('.movie video').forEach(v => { if (v !== video) { v.muted = true; v.closest('.movie').querySelector('.movie__sound').setAttribute('aria-pressed', 'false'); v.closest('.movie').querySelector('.movie__sound').textContent = '♪ 音を出す'; } });
+    video.muted = !on;
+    if (on) { video.currentTime = 0; video.play().catch(() => {}); }
+    btn.setAttribute('aria-pressed', String(on));
+    btn.textContent = on ? '♪ 音を消す' : '♪ 音を出す';
+    trackSound(on, video.dataset.app);
+  });
 });
 
 // ---- クイズ ----

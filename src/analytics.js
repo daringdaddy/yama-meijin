@@ -80,7 +80,7 @@ export function trackSection(id) {
   send(`ym_reach_${id}`, 'Section Reached', { section: id, order: seen.size });
 }
 export function trackQuiz(app, correct) { send(`ym_quiz_${app}_${correct ? 'right' : 'wrong'}`, 'Quiz Answered', { app, correct }); }
-export function trackSound(on) { send(on ? 'ym_video_sound_on' : 'ym_video_sound_off', 'Video Sound', { on }); }
+export function trackSound(on, app = '') { send(`ym_video_${app}_sound_${on ? 'on' : 'off'}`, 'Video Sound', { on, app }); }
 
 // ---- 外に出るリンク ----
 // リンク先URL（ct= / from=）は index.html に直接書いてある＝JS が動かなくても場所が残る。
