@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>山の名人シリーズ｜花・鳥・雲の名前がわかる図鑑クイズ</title>
+<meta name="description" content="山で出会う花・鳥・雲の名前を、写真クイズで覚える3本のiPhoneアプリ。山の花名人・山の鳥名人・山の雲名人。電波の届かない山でも使えて、広告なし。">
+<meta name="theme-color" content="#efe9dc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="山の名人シリーズ｜花・鳥・雲の名前がわかる図鑑クイズ">
+<meta property="og:description" content="スクロールで登山口から山頂へ。途中で1問ずつ腕だめし。">
+<meta property="og:url" content="https://daringdaddy.github.io/yama-meijin/">
+<meta property="og:image" content="https://daringdaddy.github.io/yama-meijin/og.jpg">
+<link rel="canonical" href="https://daringdaddy.github.io/yama-meijin/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon-hana.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- 標高計 -->
+<aside class="alt" aria-hidden="true">
+  <div class="alt__rail">
+    <span class="alt__mark" style="--p:.335">鳥</span>
+    <span class="alt__mark" style="--p:.753">花</span>
+    <span class="alt__mark" style="--p:.92">雲</span>
+    <span class="alt__climber"></span>
+  </div>
+  <div class="alt__num"><small>標高</small><b id="altNum">800</b><small>m</small></div>
+</aside>
+
+<a class="jump" href="#summit">3本のアプリを見る</a>
+
+<main>
+  <!-- ① 登山口 -->
+  <section class="sec hero" data-cam="0" data-alt="800">
+    <p class="eyebrow">山道具ラボ ｜ 山の名人シリーズ</p>
+    <h1 class="title" aria-label="山の名人">
+      <span class="cut" style="--i:0">山</span><span class="cut" style="--i:1">の</span><span class="cut" style="--i:2">名</span><span class="cut" style="--i:3">人</span>
+    </h1>
+    <p class="lead">花・鳥・雲。<br>山で出会う名前を、写真クイズで。</p>
+    <div class="trio">
+      <img src="img/icon-hana.webp" alt="山の花名人" width="64" height="64">
+      <img src="img/icon-tori.webp" alt="山の鳥名人" width="64" height="64">
+      <img src="img/icon-kumo.webp" alt="山の雲名人" width="64" height="64">
+    </div>
+    <a class="cue" href="#intro"><span>登りはじめる</span><i></i></a>
+  </section>
+
+  <!-- ② 導入 -->
+  <section class="sec intro" id="intro" data-cam="1" data-alt="1100">
+    <div class="card reveal">
+      <p class="kicker">標高 1,100m ・ 登山道</p>
+      <h2 class="h2">名前がわかると、<br>山は「景色」から<br>「知り合い」になる。</h2>
+      <p>足もとの花、森で鳴く鳥、稜線にかかる雲。どれも名前を知った瞬間に、見え方が変わります。</p>
+      <p>「山の名人」シリーズは、山で出会うものの名前を写真クイズで覚える、3本のiPhoneアプリ。途中の標高で1問ずつ、腕だめしをどうぞ。</p>
+    </div>
+  </section>
+
+  <!-- ③ 森：鳥 -->
+  <section class="sec app app--tori" id="tori" data-cam="2" data-alt="1600">
+    <header class="app__head reveal">
+      <p class="kicker">標高 1,600m ・ 森</p>
+      <div class="app__name">
+        <img src="img/icon-tori.webp" alt="" width="72" height="72">
+        <div><h2>山の鳥名人</h2><p>野鳥の名前がわかる図鑑クイズ</p></div>
+      </div>
+    </header>
+
+    <div class="quiz card reveal" data-quiz="tori" data-answer="1">
+      <p class="quiz__q">Q1. この鳥は？</p>
+      <svg class="quiz__art" viewBox="0 0 300 220" role="img" aria-label="枝にとまる、背中が青く喉が黒い小鳥の切り絵">
+        <rect width="300" height="220" rx="16" fill="#e4e8dc"/>
+        <g filter="url(#pp)"><path d="M18 178 L288 150 L290 161 L20 190 Z" fill="#7a644a"/><path d="M210 158 L246 128 L250 132 L218 160 Z" fill="#7a644a"/></g>
+        <g filter="url(#pp)">
+          <path d="M176 138 L236 196 L222 206 L166 150 Z" fill="#1d468f"/>
+          <ellipse cx="140" cy="128" rx="48" ry="35" transform="rotate(-18 140 128)" fill="#fbfaf4"/>
+          <path d="M86 70 Q98 42 132 48 Q178 60 198 112 Q206 138 190 150 Q168 122 142 118 Q118 112 106 98 Z" fill="#2456a8"/>
+          <path d="M80 78 Q92 66 108 68 Q116 82 118 100 Q122 124 132 144 Q104 140 94 120 Q82 100 80 78 Z" fill="#1b1d22"/>
+          <path d="M82 76 Q86 50 110 46 Q130 46 138 58 Q120 62 108 68 Q94 72 82 76 Z" fill="#3f78d0"/>
+          <path d="M81 76 L64 81 L82 85 Z" fill="#1b1d22"/>
+          <path d="M140 72 Q168 80 186 112" stroke="#18397a" stroke-width="3" fill="none"/>
+          <path d="M146 84 Q168 94 180 118" stroke="#18397a" stroke-width="2.5" fill="none"/>
+          <path d="M132 148 L128 170 M146 150 L146 168" stroke="#55504a" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <circle cx="96" cy="72" r="4.2" fill="#0c0d10"/><circle cx="97.4" cy="70.6" r="1.3" fill="#fff"/>
+      </svg>
+      <div class="quiz__opts">
+        <button>ルリビタキ</button><button>オオルリ</button><button>キビタキ</button><button>カワセミ</button>
+      </div>
+      <div class="quiz__ans" hidden>
+        <p class="quiz__verdict"></p>
+        <p>正解は<b>オオルリ</b>（オス）。顔から胸が黒く、お腹は白。そっくりな<b>ルリビタキ</b>のオスは、喉が白くて脇がオレンジ色です。</p>
+        <p class="quiz__more">アプリでは、全97種のうち80種に「似ている鳥」との見分けを収録。</p>
+      </div>
+    </div>
+
+    <div class="app__body reveal">
+      <ul class="facts">
+        <li><b>97</b><span>種の山の野鳥</span></li>
+        <li><b>80</b><span>種に見分けペア</span></li>
+        <li><b>4</b><span>区分（夏鳥・留鳥・冬鳥・旅鳥）</span></li>
+      </ul>
+      <p>オオルリとルリビタキ、コガラとハシブトガラ。どこを見れば分かるのかを、種ごとに解説。まちがえたら「選んだ鳥」と「正解の鳥」を並べて見せます。</p>
+      <div class="shots">
+        <img src="img/shot-tori-1.webp" alt="山の鳥名人のクイズ画面" loading="lazy" width="560" height="1211">
+        <img src="img/shot-tori-2.webp" alt="そっくりな鳥の見分け画面" loading="lazy" width="560" height="1211">
+        <img src="img/shot-tori-3.webp" alt="山の鳥図鑑の画面" loading="lazy" width="560" height="1211">
+      </div>
+      <a class="store" data-app="tori" href="#">App Storeで見る<small>無料でダウンロード</small></a>
+    </div>
+  </section>
+
+  <!-- ④ お花畑：花 -->
+  <section class="sec app app--hana" id="hana" data-cam="3" data-alt="2600">
+    <header class="app__head reveal">
+      <p class="kicker">標高 2,600m ・ お花畑</p>
+      <div class="app__name">
+        <img src="img/icon-hana.webp" alt="" width="72" height="72">
+        <div><h2>山の花名人</h2><p>高山植物の名前がわかる図鑑クイズ</p></div>
+      </div>
+    </header>
+
+    <div class="quiz card reveal" data-quiz="hana" data-answer="2">
+      <p class="quiz__q">Q2. この花は？</p>
+      <svg class="quiz__art" viewBox="0 0 300 220" role="img" aria-label="白い5枚の花びらと黄色い芯、羽のような葉の花の切り絵">
+        <rect width="300" height="220" rx="16" fill="#dde5d3"/>
+        <g filter="url(#pp)">
+          <path d="M150 196 L147 120 L153 120 L156 196 Z" fill="#6b7f3f"/>
+          <g fill="#557a47" id="lf">
+            <path d="M150 196 L96 150 L100 146 L152 190 Z"/>
+            <ellipse cx="108" cy="148" rx="7" ry="12" transform="rotate(-40 108 148)"/><ellipse cx="118" cy="164" rx="7" ry="12" transform="rotate(20 118 164)"/>
+            <ellipse cx="122" cy="156" rx="6" ry="11" transform="rotate(-70 122 156)"/><ellipse cx="132" cy="176" rx="6" ry="11" transform="rotate(10 132 176)"/>
+            <ellipse cx="136" cy="168" rx="6" ry="10" transform="rotate(-80 136 168)"/><ellipse cx="97" cy="143" rx="8" ry="11" transform="rotate(-50 97 143)"/>
+          </g>
+          <use href="#lf" transform="translate(300 0) scale(-1 1)"/>
+        </g>
+        <g filter="url(#pp)" transform="translate(150 92)">
+          <g fill="#fffdf8">
+            <path id="pt" d="M0 -6 C-30 -22 -34 -62 -14 -72 C-6 -76 6 -76 14 -72 C34 -62 30 -22 0 -6 Z"/>
+            <use href="#pt" transform="rotate(72)"/><use href="#pt" transform="rotate(144)"/><use href="#pt" transform="rotate(216)"/><use href="#pt" transform="rotate(288)"/>
+          </g>
+          <circle r="20" fill="#b9b24a"/>
+        </g>
+        <g transform="translate(150 92)" fill="#f0c93a">
+          <circle cx="-11" cy="-7" r="3"/><circle cx="8" cy="-12" r="3"/><circle cx="13" cy="5" r="3"/><circle cx="-4" cy="12" r="3"/><circle cx="-14" cy="6" r="3"/><circle cx="2" cy="-2" r="4" fill="#9aa85a"/>
+        </g>
+      </svg>
+      <div class="quiz__opts">
+        <button>ハクサンイチゲ</button><button>ミヤマキンバイ</button><button>チングルマ</button><button>コマクサ</button>
+      </div>
+      <div class="quiz__ans" hidden>
+        <p class="quiz__verdict"></p>
+        <p>正解は<b>チングルマ</b>。草のように見えて、実は小さな木（落葉小低木）。花のあとの綿毛が風車に見えることから「稚児車（ちごぐるま）」が名の由来とされます。</p>
+        <p class="quiz__more">アプリには、名前の由来・花期・分布・生育環境まで収録。</p>
+      </div>
+    </div>
+
+    <div class="app__body reveal">
+      <ul class="facts">
+        <li><b>132</b><span>種の高山植物</span></li>
+        <li><b class="w">見分け</b><span>近縁種をその場で解説</span></li>
+        <li><b class="w">段位</b><span>見習いから「山の花名人」へ</span></li>
+      </ul>
+      <p>写真は、必ずその花そのもの。似た別種で間に合わせることはしません。まちがえた花は「選んだ花」と「正解の花」を並べて、どこが違うかを解説します。</p>
+      <figure class="movie">
+        <div class="movie__frame">
+          <video id="promo" src="media/hana-promo.mp4" poster="media/hana-promo-poster.jpg" muted loop playsinline preload="none"></video>
+          <button class="movie__sound" id="soundBtn" aria-pressed="false">♪ 音を出す</button>
+        </div>
+        <figcaption>紙で作った「山の花名人」。ジャズもすべてプログラムで合成しています。</figcaption>
+      </figure>
+      <div class="shots">
+        <img src="img/shot-hana-1.webp" alt="山の花名人のクイズ画面" loading="lazy" width="560" height="1211">
+        <img src="img/shot-hana-2.webp" alt="まちがえた時の見分け解説画面" loading="lazy" width="560" height="1211">
+        <img src="img/shot-hana-3.webp" alt="山の花図鑑の画面" loading="lazy" width="560" height="1211">
+      </div>
+      <a class="store" data-app="hana" href="#">App Storeで見る<small>無料でダウンロード</small></a>
+    </div>
+  </section>
+
+  <!-- ⑤ 雲海：雲 -->
+  <section class="sec app app--kumo" id="kumo" data-cam="4" data-alt="3000">
+    <header class="app__head reveal">
+      <p class="kicker">標高 3,000m ・ 雲海</p>
+      <div class="app__name">
+        <img src="img/icon-kumo.webp" alt="" width="72" height="72">
+        <div><h2>山の雲名人</h2><p>雲の名前がわかる図鑑クイズ</p></div>
+      </div>
+    </header>
+
+    <div class="quiz card reveal" data-quiz="kumo" data-answer="0">
+      <p class="quiz__q">Q3. 山頂にかかる、この雲は？</p>
+      <svg class="quiz__art" viewBox="0 0 300 220" role="img" aria-label="とがった山の山頂に、帽子のように重なってかぶさる雲の切り絵">
+        <rect width="300" height="220" rx="16" fill="#dfe8f0"/>
+        <circle cx="236" cy="54" r="20" fill="#e8c86a" filter="url(#pp)"/>
+        <g filter="url(#pp)">
+          <path d="M20 220 L128 92 Q150 76 172 92 L282 220 Z" fill="#6b7a8c"/>
+          <path d="M128 92 Q150 76 172 92 L186 108 L172 104 L160 114 L148 104 L136 112 L124 104 L114 110 Z" fill="#fbfcfd"/>
+        </g>
+        <g filter="url(#pp)" fill="#fbfcfd">
+          <path d="M92 96 Q150 58 208 96 Q150 90 92 96 Z"/>
+          <path d="M104 80 Q150 46 196 80 Q150 74 104 80 Z" fill="#f1f5f9"/>
+          <path d="M118 65 Q150 38 182 65 Q150 60 118 65 Z"/>
+        </g>
+        <g filter="url(#pp)" fill="#fbfcfd" opacity=".95"><path d="M0 220 L0 188 Q30 176 60 186 Q90 172 124 186 Q160 174 196 188 Q232 176 262 188 Q284 180 300 186 L300 220 Z"/></g>
+      </svg>
+      <div class="quiz__opts">
+        <button>笠雲</button><button>レンズ雲</button><button>滝雲</button><button>雄大積雲</button>
+      </div>
+      <div class="quiz__ans" hidden>
+        <p class="quiz__verdict"></p>
+        <p>正解は<b>笠雲</b>。山頂にすっぽりかぶさるのが笠雲、山から離れて浮かぶのが<b>レンズ雲</b>。どちらも上空の風が強く湿っているサインで、「笠雲がかかると下り坂」と言われます。</p>
+        <p class="quiz__more">アプリの全34種に、昔から伝わる「観天望気」と山での読み方つき。</p>
+      </div>
+    </div>
+
+    <div class="app__body reveal">
+      <ul class="facts">
+        <li><b>34</b><span>種の雲と空の現象</span></li>
+        <li><b class="w">観天望気</b><span>「次の空」を読む</span></li>
+        <li><b class="w">見分け</b><span>笠雲とレンズ雲、積乱雲と雄大積雲</span></li>
+      </ul>
+      <p>雲は、山の天気の予兆。名前と一緒に、昔から伝わる観天望気と「山ではこう読む」を覚えられます。<small class="note">※観天望気は目安です。行動判断は気象情報と現地の状況で。</small></p>
+      <div class="shots">
+        <img src="img/shot-kumo-1.webp" alt="山の雲名人のクイズ画面" loading="lazy" width="560" height="1211">
+        <img src="img/shot-kumo-2.webp" alt="観天望気の解説画面" loading="lazy" width="560" height="1211">
+        <img src="img/shot-kumo-3.webp" alt="笠雲とレンズ雲の見分け画面" loading="lazy" width="560" height="1211">
+      </div>
+      <a class="store" data-app="kumo" href="#">App Storeで見る<small>無料でダウンロード</small></a>
+    </div>
+  </section>
+
+  <!-- ⑥ 山頂 -->
+  <section class="sec summit" id="summit" data-cam="5" data-alt="3190">
+    <div class="summit__inner reveal">
+      <p class="kicker">標高 3,190m ・ 山頂</p>
+      <h2 class="h2 summit__title">登頂、おめでとう。</h2>
+      <div class="result" id="result">
+        <p class="result__score"><span id="score">0</span><small>/ 3問</small></p>
+        <p class="result__rank" id="rank">途中の3問、まだ間に合います。</p>
+        <a class="result__share" id="share" href="#" target="_blank" rel="noopener">Threadsで結果をシェア</a>
+      </div>
+      <p class="summit__lead">続きは、アプリで。<br>3本そろえて、山の名人に。</p>
+      <ul class="lineup">
+        <li class="lineup__item lineup__item--hana">
+          <img src="img/icon-hana.webp" alt="" width="84" height="84">
+          <h3>山の花名人</h3><p>高山植物 132種</p>
+          <a class="store store--sm" data-app="hana" href="#">App Storeで見る</a>
+        </li>
+        <li class="lineup__item lineup__item--tori">
+          <img src="img/icon-tori.webp" alt="" width="84" height="84">
+          <h3>山の鳥名人</h3><p>山の野鳥 97種</p>
+          <a class="store store--sm" data-app="tori" href="#">App Storeで見る</a>
+        </li>
+        <li class="lineup__item lineup__item--kumo">
+          <img src="img/icon-kumo.webp" alt="" width="84" height="84">
+          <h3>山の雲名人</h3><p>雲と空 34種</p>
+          <a class="store store--sm" data-app="kumo" href="#">App Storeで見る</a>
+        </li>
+      </ul>
+      <ul class="common">
+        <li>電波の届かない山でも使える</li>
+        <li>広告なし</li>
+        <li>無料で試せて、気に入ったら買い切り</li>
+        <li>iPhone・iPad（iOS 15以降）</li>
+      </ul>
+    </div>
+    <footer class="foot">
+      <p><a href="https://www.daringdaddy.com/" rel="noopener">山道具ラボ</a> がつくっています。</p>
+      <p class="foot__small">アプリ画面内の写真は、各撮影者の Creative Commons ライセンス画像です（撮影者とライセンスは各画像の下部に記載）。App Store は Apple Inc. のサービスマークです。</p>
+      <p class="foot__small">© 2026 山道具ラボ</p>
+    </footer>
+  </section>
+</main>
+
+<!-- 切り絵の質感（SVG用）：紙目＋落ち影 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="pp" x="-10%" y="-10%" width="130%" height="130%">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/>
+    <feColorMatrix in="n" type="matrix" values=".32 0 0 0 .74  .32 0 0 0 .74  .32 0 0 0 .72  0 0 0 0 1" result="g"/>
+    <feComposite in="g" in2="SourceGraphic" operator="in" result="gm"/>
+    <feBlend in="SourceGraphic" in2="gm" mode="multiply" result="t"/>
+    <feDropShadow in="t" dx="2" dy="3" stdDeviation="2.4" flood-color="#2d281c" flood-opacity=".32"/>
+  </filter>
+</svg>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
